@@ -28,7 +28,7 @@ class TestCheckoutFlow:
             initialize.register_page.submit_register()
 
         with allure.step("Validate registration header"):
-            expect(initialize.register_page.header_registered_user).to_be_visible()
+            expect(initialize.header_section.registered_user_link).to_be_visible()
 
         with allure.step("Navigate to Digital Downloads"):
             initialize.navbar_section.click_digital_downloads()

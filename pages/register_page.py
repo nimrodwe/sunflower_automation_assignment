@@ -18,7 +18,6 @@ class RegisterPage(BasePage):
         self.password_input = page.get_by_role("textbox", name="Password:", exact=True)
         self.confirm_password_input = page.get_by_role("textbox", name="Confirm password:", exact=True)
         self.register_btn = page.get_by_role("button", name="Register")
-        self.header_registered_user = page.locator("a.account", has_text="@")
         self.email_exists_error = page.locator(
             "div.validation-summary-errors li",
             has_text="The specified email already exists"

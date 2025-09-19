@@ -9,6 +9,7 @@ class HeaderSection(BasePage):
         super().__init__(page)
         self.logger = logging.getLogger(__name__)
         self.register_btn_locator = page.get_by_role("link", name="Register")
+        self.registered_user_link = page.locator('.header-links a.account')
         self.shopping_cart_locator = page.get_by_role("link", name="Shopping cart", exact=True)
 
     def click_register_header_btn(self):
