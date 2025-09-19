@@ -9,7 +9,7 @@ class ProductPage(BasePage):
         super().__init__(page)
         self.logger = logging.getLogger(__name__)
         self.cart_button = page.locator("input.button-1.add-to-cart-button[value='Add to cart']")
-        self.add_to_cart_success_message = page.locator('p.content', has_text="The product has been added to your")
+        self.add_to_cart_success_message = page.locator("div.bar-notification.success p.content")
 
     def click_cart_btn(self):
         self.click(self.cart_button)
