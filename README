@@ -1,0 +1,45 @@
+🐳 Docker Compose (Full Stack)
+# Start the complete testing environment
+docker-compose up --build
+
+📊 Accessing Reports
+After running with Docker Compose, access the Allure report at:
+http://localhost:5050/allure-docker-service/projects/default/reports/latest/index.html
+
+🛠️ Local Installation
+# Clone the repository
+git clone https://github.com/shlomi10/OrangeHRM.git
+cd OrangeHRM
+
+# Create virtual environment
+python -m venv .venv
+
+# Activate virtual environment
+source .venv/bin/activate    # Linux/macOS
+# or
+.venv\Scripts\activate      # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install Playwright browsers
+playwright install
+
+🧪 Running Tests
+# Run all tests with Allure reporting
+pytest --alluredir=allure-results
+
+# Run specific test file
+pytest .\tests\test_checkout_flow.py --alluredir=allure-results
+
+# Run with verbose output
+pytest -v --alluredir=allure-results
+
+# Generate and serve Allure report
+allure serve allure-results
+
+
+
+keep in mind that on mac you probably will need to run: "brew install allure" if you face error regarding environment,
+either way running with docker wont produce this kind of error.
+
