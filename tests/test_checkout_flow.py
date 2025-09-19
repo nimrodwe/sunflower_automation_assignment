@@ -27,6 +27,9 @@ class TestCheckoutFlow:
         with allure.step("Submit registration"):
             initialize.register_page.submit_register()
 
+        with allure.step("Click continue"):
+            initialize.register_page.click_continue()
+
         with allure.step("Validate registration header"):
             expect(initialize.header_section.registered_user_link).to_be_visible()
 

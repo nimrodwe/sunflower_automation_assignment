@@ -18,10 +18,8 @@ class RegisterPage(BasePage):
         self.password_input = page.get_by_role("textbox", name="Password:", exact=True)
         self.confirm_password_input = page.get_by_role("textbox", name="Confirm password:", exact=True)
         self.register_btn = page.get_by_role("button", name="Register")
-        self.email_exists_error = page.locator(
-            "div.validation-summary-errors li",
-            has_text="The specified email already exists"
-        )
+        self.continue_btn = page.get_by_role("button", name="Continue")
+        self.email_exists_error = page.locator("div.validation-summary-errors li", has_text="already exists")
 
     def select_random_gender(self):
         gender_choice = random.choice(["M", "F"])
@@ -53,6 +51,10 @@ class RegisterPage(BasePage):
     def fill_confirm_password(self, confirm_password: str):
         self.clear_and_type(self.confirm_password_input, confirm_password)
         self.logger.info("Confirm password filled successfully")
+
+    def click_continue(self):
+        self.continue_btn.click()
+        self.logger.info("Continue clicked successfully")
 
     def submit_register(self):
         self.register_btn.click()
