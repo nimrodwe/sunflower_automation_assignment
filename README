@@ -9,7 +9,7 @@ http://localhost:5050/allure-docker-service/projects/default/reports/latest/inde
 🛠️ Local Installation
 # Clone the repository
 git clone https://github.com/nimrodwe/sunflower_automation_assignment.git
-cd OrangeHRM
+cd sunflower_automation_assignment
 
 # Create virtual environment
 python -m venv .venv
